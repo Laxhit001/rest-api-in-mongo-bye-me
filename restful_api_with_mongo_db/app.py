@@ -83,6 +83,7 @@ def create_task():
     task = db.retrieve_task_with_title(request.json['title'])
     return jsonify({'task': make_public_task(task)}), 201
 
+
 @app.route('/todo/api/v1.0/tasks/<int:task_id>', methods=['PUT'])
 @auth.login_required
 def update_task(task_id):
